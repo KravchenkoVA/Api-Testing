@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC
+        "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+        "http://checkstyle.sourceforge.net/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+    <property name="fileExtensions" value=""/>
+    <property name="haltOnException" value="false"/>
+    <property name="charset" value="UTF-8"/>
+
+    <module name="JavadocPackage">
+        <property name="severity" value="ignore"/>
+    </module>
+
+
+    <!-- Checks whether files end with a new line.                        -->
+    <!-- See http://checkstyle.sf.net/config_misc.html#NewlineAtEndOfFile -->
+    <module name="NewlineAtEndOfFile">
+        <property name="lineSeparator" value="lf_cr_crlf"/>
+        <property name="severity" value="ignore"/>
+    </module>
+
+    <!-- http://checkstyle.sourceforge.net/config_whitespace.html#FileTabCharacter -->
+    <module name="FileTabCharacter">
+    <property name="eachLine" value="true"/>
+    </module>
+
+    <!-- Checks that property files contain the same keys.         -->
+    <!-- See http://checkstyle.sf.net/config_misc.html#Translation -->
+    <module name="Translation"/>
+
+    <!-- Checks properties file for a duplicated properties. -->
+    <!-- See http://checkstyle.sourceforge.net/config_misc.html#UniqueProperties -->
+    <module name="UniqueProperties"/>
+
+    <module name="SuppressWarningsFilter"/>
+
+    <!--  -->
+    <module name="TreeWalker">
+        <module name="JavadocType">
+        <property name="authorFormat" value="\S"/>
+        <property name="severity" value="ignore"/>
+        </module>
+        <module name="JavadocMethod">
+            <property name="ignoreMethodNamesRegex"
+                      value="^get.*$|^set.*$|^toString*$|^[A-Z].*|^serialize*$|^deserialize*$|^equals.*$|^hashCode.*$"/>
+            <property name="allowedAnnotations" value="Test, ParameterizedTest"/>
+        </module>
+        <module name="JavadocVariable">
+            <property name="severity" value="ignore"/>
+        </module>
+        <module name="JavadocStyle">
+            <property name="checkFirstSentence" value="false"/>
+        </module>
+
+        <module name="SuppressWarningsHolder"/>
+
+        <!-- Checks for Naming Conventions.                  -->
+        <!-- See http://checkstyle.sf.net/config_naming.html -->
+        <module name="ConstantName"/>
+        <module name="LocalFinalVariableName">
+            <property name="format" value="^[a-zA-Z_]*$"/>
+        </module>
+        <module name="LocalVariableName"/>
+        <module name="MemberName">
+            <property name="severity" value="ignore"/>
+        </module>
+        <module name="MethodName"/>
+        <module name="PackageName"/>
+        <module name="ParameterName"/>
+        <module name="StaticVariableName"/>
+        <module name="TypeName"/>
+
+        <!-- Checks for imports                              -->
+        <!-- See http://checkstyle.sf.net/config_import.html -->
+        <module name="AvoidStarImport">
+            <property name="severity" value="ignore"/>
+        </module>
+        <module name="AvoidStaticImport">
+            <property name="severity" value="ignore"/>
+        </module>
+        <module name="IllegalImport"/>
+        <module name="RedundantImport"/>
+        <module name="UnusedImports">
+            <property name="severity" value="ignore"/>
+        </module>
+
+        <!-- Checks for Size Violations.                    -->
+        <!-- See http://checkstyle.sf.net/config_sizes.html -->
+        <module name="LineLength">
+            <property name="max" value="150"/>
+            <property name="tabWidth" value="55"/>
+        </module>
+        <module name="MethodLength">
+            <property name="max" value="200"/>
+        </module>
+        <module name="ParameterNumber"/>
+        <module name="OuterTypeNumber"/>
+
+        <!-- Checks for whitespace                               -->
+        <!-- See http://checkstyle.sf.net/config_whitespace.html -->
+        <module name="EmptyForInitializerPad">
+            <property name="option" value="space"/>
+        </module>
+        <module name="EmptyForIteratorPad"/>
+        <module name="GenericWhitespace"/>
+        <module name="MethodParamPad"/>
+        <module name="NoLineWrap"/>
+        <module name="NoWhitespaceAfter"/>
+        <module name="NoWhitespaceBefore"/>
+        <module name="ParenPad"/>
+        <module name="TypecastParenPad"/>
+        <module name="WhitespaceAfter">
+            <property name="tokens" value="COMMA, SEMI, TYPECAST"/>
+        </module>
+
+        <!-- Modifier Checks                                    -->
+        <!-- See http://checkstyle.sf.net/config_modifiers.html -->
+        <module name="ModifierOrder"/>
+        <module name="RedundantModifier"/>
+
+        <!-- Checks for blocks. You know, those {}'s         -->
+        <!-- See http://checkstyle.sf.net/config_blocks.html -->
+        <module name="AvoidNestedBlocks">
+            <property name="allowInSwitchCase" value="true"/>
+        </module>
+        <!--<module name="EmptyBlock"/>-->
+        <module name="LeftCurly"/>
+        <module name="NeedBraces"/>
+        <module name="RightCurly"/>
+
+        <!-- http://checkstyle.sourceforge.net/config_misc.html#UncommentedMain -->
+        <module name="UncommentedMain">
+            <property name="excludedClasses" value="\.(Application|.*Server)$"/>
+        </module>
+
+        <!-- Miscellaneous other checks.                   -->
+        <!-- See http://checkstyle.sf.net/config_misc.html -->
+        <module name="ArrayTypeStyle"/>
+        <module name="FinalParameters">
+            <property name="severity" value="ignore"/>
+        </module>
+        <module name="TodoComment">
+            <property name="severity" value="ignore"/>
+        </module>
+        <module name="UpperEll"/>
+
+        <!-- http://checkstyle.sourceforge.net/config_annotation.html -->
+        <module name="MissingDeprecated"/>
+        <module name="MissingOverride"/>
+
+        <!-- http://checkstyle.sourceforge.net/config_annotation.html -->
+        <module name="MagicNumber">
+            <property name="severity" value="ignore"/>
+        </module>
+    </module>
+</module>
